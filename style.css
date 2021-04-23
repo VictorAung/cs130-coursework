@@ -1,0 +1,53 @@
+/* You're welcome to change any of this! */
+
+
+body {
+    margin: 0px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #FFFFFF;
+    background-color: #0D1321;
+}
+
+a {
+    color: #748CAB;
+}
+header {
+    background-color: #0D1321;
+
+}
+main {
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+    flex-direction: row;
+
+}
+header, section {
+    padding: 20px;
+}
+p, li {
+    line-height: 1.5em;
+}
+
+.card {
+    flex: 1 1 0;
+    border: 2px solid white; 
+    border-radius: 20px;
+    height: 500px;
+    margin: 30px;
+}
+
+.card:hover {
+    background-color: #1D2D44;
+}
+
+#tutorials {
+   
+}
+
+#homework {
+
+}
+#inspiration {
+
+}
