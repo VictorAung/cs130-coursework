@@ -17,20 +17,75 @@ const search = (ev) => {
 }
 
 const getTracks = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
-    
-  
+    let trackSection = document.querySelector('#track-section')
+    let tracks = trackSection.querySelector('#tracks')
 
+    fetch(`https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data[0] === undefined) {
+                tracks.innerHTML = "No tracks found";
+            }
+            else {
+                if (data.length < 5) {
+                    for (i = 0; i < data.length; i++) {
+                        tracks.innerHTML += `<section class="track-item preview" data-preview-track="${data[i].preview_url}">
+                        <img src="${data[i].album.image_url}">
+                        <i class="fas play-track fa-play" aria-hidden="true"></i>
+                        <div class="label">
+                            <h3>${data[i].name}</h3>
+                            <p>
+                                ${data[i].artist.name}
+                            </p>
+                        </div>
+                        </section>`;
+                    }
+            }
+                else {
+                    for (i = 0; i < 5; i++) {
+                        tracks.innerHTML += `<section class="track-item preview" data-preview-track="${data[i].preview_url}">
+                        <img src="${data[i].album.image_url}">
+                        <i class="fas play-track fa-play" aria-hidden="true"></i>
+                        <div class="label">
+                            <h3>${data[i].name}</h3>
+                            <p>
+                                ${data[i].artist.name}
+                            </p>
+                        </div>
+                        </section>`;
+                    }
+                }
+               
+            }
+        });
 };
 
 const getAlbums = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+    let albumSection = document.querySelector('#album-section')
+    let albums = albumSection.querySelector('#albums')
+
+    fetch(`https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data[0] === undefined) {
+                albums.innerHTML = "No albums found";
+            }
+            else {
+                for (i = 0; i < data.length; i++) {
+                    albums.innerHTML += `<section class="album-card" id="${data[i].id}">
+                    <div>
+                        <img src="${data[i].image_url}">
+                        <h3>${data[i].name}</h3>
+                        <div class="footer">
+                            <a href="${data[i].spotify_url}" target="_blank">
+                                view on spotify
+                            </a>
+                        </div>
+                    </div>
+                </section>`
+                }
+            }
+        });
 };
 
 const getArtist = (term) => {
