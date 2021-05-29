@@ -134,8 +134,13 @@ html {
     right: 24px;
     opacity: 0;
     font-size: 20px;   
-    color: gray   
+    color: gray;
   }
+
+  .sidebar-bullet {
+    cursor: pointer;
+  }
+
   li.selected {
       color: white
   }
