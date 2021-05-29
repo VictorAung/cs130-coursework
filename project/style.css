@@ -112,15 +112,32 @@ html {
   }
 
   .header {
+    animation: fade-in 2s linear 8.5s forwards;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     width: 90%;
     display: flex;
     justify-content: space-evenly;
-    
     padding-top: 12px;
+    opacity: 0;
+  }
 
+  .sidebar {
+    animation: fade-in 2s linear 8.5s forwards;
+    position: absolute;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 24px;
+    opacity: 0;
+    font-size: 20px;   
+    color: gray   
+  }
+  li.selected {
+      color: white
   }
 
   .header-tab {
@@ -177,7 +194,7 @@ html {
 
   .greeting2 {
     width: 12ch;
-    animation: typing 1.75s steps(11) 2s forwards, blink .5s step-end 12 alternate;
+    animation: typing 1.75s steps(11) 2s forwards, blink .5s step-end 10 alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -188,7 +205,7 @@ html {
 
 
   .name {
-    animation: fade-in 2s linear 6s forwards;
+    animation: fade-in 3s 5.25s forwards;
     opacity: 0;
     text-transform: lowercase; 
     font-size: 8vw; 
@@ -269,7 +286,7 @@ html {
 }
 
 .chevron::before {
-    animation: fade-in 2s linear 7s forwards;
+    animation: fade-in 2s linear 8.5s forwards;
     opacity: 0;
     color: white;
 	border-style: solid;
