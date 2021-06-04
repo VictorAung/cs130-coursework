@@ -7,34 +7,59 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head> 
+
     <body class="body">
-    <div class="header">
-        <div class="header-tab">About</div>
-        <div class="header-tab">Work</div>
-        <div class="header-tab">Projects</div>
-        <div class="header-tab">Résumé</div>
-    </div>
-    <ul class="sidebar">
-        <li class="sidebar-bullet selected"></li>
-        <li class="sidebar-bullet"></li>
-        <li class="sidebar-bullet"></li>
-        <li class="sidebar-bullet"></li>
-    </ul>
-    <div class="intro">
-        <div>
-            <div class="greeting">
-                <div class="greeting1">Hi!</div>
-                <div class="greeting2">My name is:</div>
+        <div class="rain back-row"></div>
+
+        <div class="header">
+            <div class="header-tab" onclick="screenScroll(1)">About</div>
+            <div class="header-tab" onclick="screenScroll(2)">Work</div>
+            <div class="header-tab" onclick="screenScroll(3)">Projects</div>
+            <a target="_blank" class="header-tab" href="Resume.pdf">Résumé</a>
+        </div>
+        <ul class="sidebar">
+            <li class="sidebar-bullet selected" onclick="screenScroll(0)"></li>
+            <li class="sidebar-bullet" onclick="screenScroll(1)"></li></li>
+            <li class="sidebar-bullet" onclick="screenScroll(2)"></li></li>
+            <li class="sidebar-bullet" onclick="screenScroll(3)"></li></li>
+        </ul>
+        <div class="intro">
+            <div>
+                <div class="greeting">
+                    <div class="greeting1">Hi!</div>
+                    <div class="greeting2">My name is:</div>
+                </div>
+                <div class="name">Victor Aung</div>
             </div>
-            <div class="name">Victor Aung</div>
+            <div class="bouncing" onclick="screenScroll(1)">
+                <span class="chevron"></span>
+            </div>
         </div>
-        <div class="bouncing">
-            <span class="chevron"></span>
+        <div class="about">
+            <div class="about-box">
+                <div class="box-header">
+                    about:
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="rain front-row"></div>
-    <div class="rain back-row"></div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="scripts.js"></script>
+        <div class="work">
+            <div class="work-box">
+                <div class="box-header">
+                    work:
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <div class="projects-box">
+                <div class="box-header">
+                    projects:
+                </div>
+            </div>
+        </div>
+        <!-- <div class="rain front-row"></div> -->
+
+    
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="scripts.js"></script>
     </body>
 </html>

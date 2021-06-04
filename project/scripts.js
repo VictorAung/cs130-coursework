@@ -15,12 +15,16 @@ var makeItRain = function() {
     //increment
     increment += randoFiver;
     //add in a new raindrop with various randomizations to certain CSS properties
-    drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div></div>';
-    backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div></div>';
+    drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + (randoHundo) + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div></div>';
+    backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + (randoHundo) + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 1.' + randoHundo + 's;"></div></div>';
   }
 
   $('.rain.front-row').append(drops);
   $('.rain.back-row').append(backDrops);
+}
+
+var screenScroll = function(x) {
+  window.scroll(0, x*window.innerHeight)
 }
 
 $('.splat-toggle.toggle').on('click', function() {
